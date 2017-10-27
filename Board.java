@@ -1,8 +1,9 @@
 import java.util.*;
 
 class Board{
-	pubic static List<Node> board = new ArrayList<Node>;
-	
+    public static final String WHITE = "white";
+    public static final String BLACK = "black";
+
 	 public static Node[][] board = new Node[8][8];
 
     public static void setBoard(){

@@ -78,13 +78,11 @@ public class Node {
 
     public void moveDownRight() {
         int newY = y + 1;
-        int newX = x+1;
+        int newX = x + 1;
         Node newNode = new Node(newX, newY, color);
         board[x][y] = null;
         board[newX][newY] = newNode;
 
 
-
-
-	
+    }
 }
