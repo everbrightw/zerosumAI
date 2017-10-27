@@ -9,4 +9,10 @@ public class Main {
         Board.setBoard();
         Board.print();
     }
+
+    public static void test(){
+    	ZeroSum.selectChess(50,50);
+    	ZeroSum.moveChess(300,300);
+    }
+    
 }

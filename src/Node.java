@@ -63,4 +63,5 @@ public class Node {
         Board.board[newX][newY] = newNode;
 
     }
+    
 }
