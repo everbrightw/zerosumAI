@@ -1,4 +1,3 @@
-import java.util.*;
 
 // each instance of node represent a chessman
 public class Node {
@@ -82,7 +81,6 @@ public class Node {
         Node newNode = new Node(newX, newY, color);
         board[x][y] = null;
         board[newX][newY] = newNode;
-
 
     }
 }

@@ -1,6 +1,7 @@
+
 import java.util.*;
 
-class Board{
+public class Board{
     public static final String WHITE = "white";
     public static final String BLACK = "black";
 
@@ -25,5 +26,14 @@ class Board{
             }
         }
     }
-	
+
+    public static void print(){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(board[j][i].color.charAt(0) + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
