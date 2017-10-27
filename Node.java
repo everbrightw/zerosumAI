@@ -1,59 +1,89 @@
 import java.util.*;
 
 // each instance of node represent a chessman
-public class Node{
-	
-	public int x;
-	
-	public int y;
+public class Node {
+    public static Node[][] board = new Node[8][8];
 
-	public string color;
+    public static void setBoard(){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                board[i][j] = null;
+            }
+        }
 
-	public boolean chess;
+        for (int i = 0; i < 7 ; i++) {
+            for (int j = 0; j <2 ; j++) {
+                board[i][j] = new Node(i, j, BLACK);
+            }
+        }
 
-	public final string WHITE = "white";
+        for (int i = 0; i < 7 ; i++) {
+            for (int j = 6; j < 8 ; j++) {
+                board[i][j] = new Node(i, j, WHITE);
+            }
+        }
+    }
+    public int x;
 
-	public final string BLACK = "black";
+    public int y;
 
-	public Node left;
-	public Node right;
-	public Node up;
-	public Node down;
+    public static String color;
 
-	public Node(){
-		//default constructor
-	}
+    public boolean hasChess(int i,int j){
+        return !(board[i][j] == null);
+    }
 
-	public Node(int x, int y, string color, boolean hasChess){
-		this.x = x;
-		this.y = y;
-		this.color = color;
-		chess = hasChess;
-	}
+    public static final String WHITE = "white";
+    public static final String BLACK = "black";
 
-	// chess moving
-	public void moveUp(){
-		x -= 1;
-		chess = false;
-		Node.up.chess = true;
-	}	
-	public void moveDown(){
-		x += 1;
-		chess = false;
-		Node.down.chess = true;
-	}
-	public void moveLeft(){
-		y -=1;
-		chess = false;
-		Node.left.chess = true;
-	}
-	public void moveRight(){
-		y += 1;
-		chess = false;
-		Node.right.chess = true; 
-	}
+    public Node() {
+        //default constructor
+    }
 
-	
+    public Node(int x, int y, String color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+
+    // chess moving
+    public void moveUp() {
+        int newY = y -1;
+        Node newNode = new Node(x, newY, color);
+        board[x][y] = null;
+        board[x][newY] = newNode;
+    }
+
+    public void moveDown() {
+        int newY = y + 1;
+        Node newNode = new Node(x, newY, color);
+        board[x][y] = null;
+        board[x][newY] = newNode;
+    }
+    public void moveUpRight() {
+        int newY = y -1;
+        int newX = x+1;
+        Node newNode = new Node(newX, newY, color);
+        board[x][y] = null;
+        board[newX][newY] = newNode;
+    }
+
+    public void moveUpLeft() {
+        int newY = y - 1;
+        int newX = x - 1;
+        Node newNode = new Node(newX, newY, color);
+        board[x][y] = null;
+        board[newX][newY] = newNode;
+    }
+
+    public void moveDownRight() {
+        int newY = y + 1;
+        int newX = x+1;
+        Node newNode = new Node(newX, newY, color);
+        board[x][y] = null;
+        board[newX][newY] = newNode;
+
+
 
 
 	
