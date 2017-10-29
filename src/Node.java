@@ -1,67 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
 
-// each instance of node represent a chessman
-public class Node {
- 
-    public int x;
+class Node {
 
-    public int y;
+    public int x;//current position for x
 
-    public String color;
+    public int y;//current position for y
 
-    public boolean hasChess(int i,int j){
-        return !(Board.board[i][j] == null);
+    public char value; //black 'B' or white 'W'
+
+    public boolean hasChess;
+
+    //copy constructor
+    public Node(Node other) {
+        this.x = other.x;
+        this.y = other.y;
+        this.value = other.value;
     }
 
-    public static final String WHITE = "white";
-    public static final String BLACK = "black";
-
-    public Node() {
-        //default constructor
-    }
-
-    public Node(int x, int y, String c) {
+    //constructor
+    public Node(int x, int y, char value) {
         this.x = x;
         this.y = y;
-        this.color = c;
-    }
 
-    // chess moving
-    public void moveUp() {
-        int newY = y -1;
-        Node newNode = new Node(x, newY, color);
-        Board.board[x][y] = null;
-        Board.board[x][newY] = newNode;
-    }
+        this.value = value;
 
-    public void moveDown() {
-        int newY = y + 1;
-        Node newNode = new Node(x, newY, color);
-        Board.board[x][y] = null;
-        Board.board[x][newY] = newNode;
-    }
-    public void moveUpRight() {
-        int newY = y -1;
-        int newX = x+1;
-        Node newNode = new Node(newX, newY, color);
-        Board.board[x][y] = null;
-        Board.board[newX][newY] = newNode;
-    }
-
-    public void moveUpLeft() {
-        int newY = y - 1;
-        int newX = x - 1;
-        Node newNode = new Node(newX, newY, color);
-        Board.board[x][y] = null;
-        Board.board[newX][newY] = newNode;
-    }
-
-    public void moveDownRight() {
-        int newY = y + 1;
-        int newX = x + 1;
-        Node newNode = new Node(newX, newY, color);
-        Board.board[x][y] = null;
-        Board.board[newX][newY] = newNode;
 
     }
-    
+    //default constructor
+    public Node() {
+        this.x = x;
+        this.y = y;
+
+        this.value = value;
+    }
+
+
+    public boolean equals(Node other) {
+        return ((this.x == other.x) && (this.y == other.y) && (this.value == other.value));
+    }
+
+
 }

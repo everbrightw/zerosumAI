@@ -11,8 +11,8 @@ public class Main {
     }
 
     public static void test(){
-    	ZeroSum.selectChess(50,50);
-    	ZeroSum.moveChess(300,300);
+    	ZeroSum.selectChess(150,100);
+    	ZeroSum.moveChess(50,250);
     }
     
 }
