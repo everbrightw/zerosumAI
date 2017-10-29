@@ -1,4 +1,5 @@
 import java.lang.Math;
+
 class Strategy{
 
 	public static double defensiveGiven(Board board, char mColor){

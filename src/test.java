@@ -4,8 +4,13 @@ public class test{
 	public static double minimax(Board board, int depth, char mColor){
     
   	if(depth == 0 | board.isGoal()){
-  
-  		return Strategy.defensiveGiven(board, mColor);
+      if(mColor == Board.BLACK){
+        mColor = Board.WHITE;
+      }
+      else{
+        mColor = Board.BLACK;
+      }
+  		return Strategy.offensiveGiven(board, mColor);
 
   	}
   	// max player

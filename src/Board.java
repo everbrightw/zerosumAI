@@ -5,7 +5,7 @@ class Board{
   public static final char WHITE = 'W';
   public static final char BLACK = 'B';
   public double value;
-   public  Node[][] board = new Node[8][8];
+  public Node[][] board = new Node[8][8];
 
    // copy constructor
    public Board(Board other){
@@ -186,9 +186,26 @@ class Board{
     }
     return retval;
   }
+
   public boolean isGoal(){
+  
+    for(int j = 0; j < 8; j++){
+        if(board[j][0].value == WHITE){
+          return true;
+        }
+        if(board[j][7].value == BLACK){
+          return true;
+        }
+    }
+    if(numRem(WHITE)==0 | numRem(BLACK) == 0){
+      return true;
+    }
     return false;
+
   }
+
+
+
 
 
  }
