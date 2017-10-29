@@ -16,11 +16,7 @@ class Board{
       }
       this.value = other.value;
    }
-   //fake board
-   // public Board(){
-
-   // }
-
+  
    // default constructor
    public Board(){
      for(int i = 0; i < 8; i++){
